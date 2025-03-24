@@ -7,9 +7,15 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
+# Node modules
 node_modules
-dist
+
+# Build output
+# Remove the below line to include `dist/` in Git (client/dist will be included)
+# dist
 dist-ssr
+
+# Local environment files
 *.local
 
 # Editor directories and files

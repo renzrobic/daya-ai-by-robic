@@ -1,14 +1,16 @@
 import nodemailer from "nodemailer";
+import dotenv from "dotenv";
+
+dotenv.config();
 
 const transporter = nodemailer.createTransport({
   service: "gmail",
   auth: {
-    user: process.env.EMAIL_USER, // Your Gmail from .env
-    pass: process.env.EMAIL_PASS, // App Password if 2FA is enabled
+    user: process.env.EMAIL_USER,
+    pass: process.env.EMAIL_PASS,
   },
 });
 
-// Verify transporter configuration
 transporter.verify((error, success) => {
   if (error) {
     console.error("Transporter verification failed:", error);
