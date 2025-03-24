@@ -25,7 +25,7 @@ app.use(clerkMiddleware());
 // Allowed Origins for CORS
 const allowedOrigins = [
   "http://localhost:5173",
-  "https://daya-ai-by-robic.vercel.app",
+  "https://daya-ai-by-robic.vercel.app/api",
 ];
 
 app.use(
