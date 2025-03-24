@@ -22,13 +22,25 @@ const __dirname = path.dirname(__filename);
 // Clerk middleware should be first
 app.use(clerkMiddleware());
 
-// Other middlewares
+// Allowed Origins for CORS
+const allowedOrigins = [
+  "http://localhost:5173",
+  "https://daya-ai-by-robic-b13se3plc-renz-robics-projects.vercel.app",
+];
+
 app.use(
   cors({
-    origin: process.env.CLIENT_URL,
+    origin: (origin, callback) => {
+      if (!origin || allowedOrigins.includes(origin)) {
+        callback(null, true);
+      } else {
+        callback(new Error("Not allowed by CORS"));
+      }
+    },
     credentials: true,
   })
 );
+
 app.use(express.json());
 
 // API Routes
