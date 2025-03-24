@@ -9,6 +9,4 @@ const imagekit = new ImageKit({
   privateKey: process.env.IMAGE_KIT_PRIVATE_KEY,
 });
 
-console.log("ImageKit Public Key:", process.env.IMAGE_KIT_PUBLIC_KEY); // Debugging
-
 export default imagekit;
