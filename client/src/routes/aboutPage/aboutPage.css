@@ -1,0 +1,164 @@
+.aboutPage {
+  display: flex;
+  flex-direction: column;
+  gap: 200px;
+  justify-content: center;
+
+  .hero {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    font-size: 25px;
+    gap: 50px;
+    margin-top: 150px;
+
+    .mission {
+      align-items: center;
+      border: solid 2px #6d28d9;
+      border-radius: 20px;
+      display: flex;
+      flex-direction: row;
+      gap: 30px;
+      justify-content: center;
+      margin-bottom: 100px;
+      padding: 50px;
+
+      .cards {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+
+        .card {
+          align-items: center;
+          background-color: #080808;
+          border: 2px solid #121212;
+          border-radius: 20px;
+          display: flex;
+          flex-direction: row;
+          gap: 20px;
+          padding: 20px 30px;
+
+          .number {
+            align-items: center;
+            border: solid 2px #6d28d9;
+            border-radius: 50%;
+            display: flex;
+            font-size: 30px;
+            font-weight: 700;
+            height: 50px;
+            justify-content: center;
+            width: 50px;
+          }
+
+          span {
+            align-items: start;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            width: 400px;
+
+            h1 {
+              font-size: 18px;
+              font-weight: 700;
+            }
+
+            p {
+              font-size: 13px;
+              text-align: justify;
+            }
+          }
+        }
+      }
+
+      img {
+        border-radius: 15px;
+        height: 420px;
+      }
+    }
+  }
+
+  .story {
+    align-items: start;
+    display: flex;
+    gap: 100px;
+    justify-content: space-between;
+    margin-bottom: 50px;
+
+    img {
+      border-radius: 15px;
+      box-shadow: 0 0 5px #8b5cf6, 0 0 15px rgba(139, 92, 246, 0.6),
+        0 0 40px rgba(59, 130, 246, 0.3);
+      height: 500px;
+    }
+
+    span {
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+
+      p {
+        font-size: 14px;
+        width: 550px;
+        text-align: justify;
+      }
+    }
+  }
+
+  .team {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+
+    .cards {
+      align-items: center;
+      display: flex;
+      flex-direction: row;
+      gap: 50px;
+      justify-content: center;
+
+      .card {
+        align-items: center;
+        border: solid 2px #6d28d9;
+        border-radius: 15px;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        justify-content: center;
+        padding: 20px;
+
+        h1 {
+          font-size: 18px;
+          margin-bottom: -20px;
+        }
+
+        img {
+          border-radius: 10px;
+          width: 200px;
+        }
+
+        p {
+          font-size: 12px;
+          margin-bottom: 5px;
+        }
+
+        span {
+          display: flex;
+          gap: 10px;
+          margin-top: -15px;
+
+          img {
+            width: 20px;
+            cursor: pointer;
+            position: relative;
+            transition: top 0.3s ease-in-out;
+
+            &:hover {
+              top: -5px;
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,205 @@
+.chatList {
+  display: flex;
+  flex-direction: column;
+  font-size: 14px;
+  height: 100%;
+  padding: 20px;
+
+  hr {
+    border: none;
+    height: 2px;
+    background-color: #ddd;
+    opacity: 0.1;
+    border-radius: 5px;
+    margin: 20px 0px;
+  }
+
+  .chats {
+    font-weight: 600;
+    font-size: 12px;
+    margin-top: 30px;
+    border-radius: 10px;
+    padding: 10px;
+  }
+  .title {
+    font-weight: 600;
+    font-size: 9px;
+    margin-bottom: 10px;
+  }
+
+  .list {
+    display: flex;
+    flex-direction: column;
+    overflow: scroll;
+    font-size: 14px;
+
+    .chat-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: relative;
+      padding: 5px 10px 5px 0px;
+
+      &:hover {
+        background-color: #0b1119;
+        border-radius: 10px;
+      }
+
+      &:hover .dropdown {
+        visibility: visible;
+      }
+
+      input {
+        font-size: 15px;
+        padding: 10px 15px;
+        border: none;
+        border-radius: 5px;
+        background-color: #0b1119;
+        color: #ddd;
+        outline: none;
+        transition: border-color 0.3s ease-in-out;
+      }
+
+      .dropdown {
+        position: relative;
+        visibility: hidden;
+
+        .menu-btn {
+          background-color: transparent;
+          border: none;
+          cursor: pointer;
+
+          img {
+            height: 3px;
+          }
+        }
+
+        .dropdown-menu {
+          position: fixed;
+          display: flex;
+          flex-direction: column;
+          border-radius: 10px;
+          background-color: #0b1119;
+          z-index: 10;
+          padding: 10px;
+
+          button {
+            border-radius: 10px;
+            padding: 10px 20px;
+            gap: 10px;
+            display: flex;
+            cursor: pointer;
+            background-color: transparent;
+            border: none;
+            position: relative;
+            overflow: hidden;
+            transition: background-color 0.3s ease-in-out;
+
+            &::before {
+              content: "";
+              position: absolute;
+              top: 0;
+              left: -100%;
+              width: 100%;
+              height: 100%;
+              background: linear-gradient(
+                90deg,
+                rgba(255, 255, 255, 0) 0%,
+                rgba(255, 255, 255, 0.6) 50%,
+                rgba(255, 255, 255, 0) 100%
+              );
+              transition: left 0.5s ease-in-out;
+            }
+
+            &:hover::before {
+              left: 100%;
+            }
+
+            &:hover {
+              background-color: rgba(0, 0, 0, 0.1);
+            }
+
+            p {
+              color: #ddd;
+            }
+
+            img {
+              height: 15px;
+              width: 15px;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  a {
+    padding: 10px;
+    border-radius: 10px;
+
+    &:hover {
+      background-color: #0b1119;
+      border-radius: 10px;
+    }
+  }
+
+  .upgrade {
+    margin-top: auto;
+    display: flex;
+    font-size: 12px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    transition: background-color 0.3s ease-in-out;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(
+        90deg,
+        rgba(255, 255, 255, 0) 0%,
+        rgba(255, 255, 255, 0.6) 50%,
+        rgba(255, 255, 255, 0) 100%
+      );
+      transition: left 0.5s ease-in-out;
+    }
+
+    &:hover::before {
+      left: 100%;
+    }
+
+    &:hover {
+      background-color: #0b1119;
+    }
+    .container {
+      padding: 10px;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      gap: 15px;
+      img {
+        height: 30px;
+      }
+
+      .texts {
+        display: flex;
+        flex-direction: column;
+
+        span {
+          &:first-child {
+            font-weight: 600;
+          }
+
+          &:last-child {
+            color: #888;
+          }
+        }
+      }
+    }
+  }
+}

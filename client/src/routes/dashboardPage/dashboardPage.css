@@ -1,0 +1,98 @@
+.dashboardPage {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #040609;
+}
+
+.dashboardPage .texts {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 50%;
+  gap: 50px;
+}
+
+.dashboardPage .texts .logo {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.dashboardPage .texts .logo img {
+  height: 64px;
+}
+
+.dashboardPage .formContainer {
+  margin-top: auto;
+  width: 50%;
+  background-color: #06080d;
+  border-radius: 20px;
+  display: flex;
+}
+
+.dashboardPage .formContainer form {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 10px;
+}
+
+.dashboardPage .formContainer form input {
+  flex: 1;
+  padding: 20px;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  color: #ececec;
+}
+
+.dashboardPage .formContainer form button {
+  background-color: #0b1119;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 20px;
+  position: relative;
+  overflow: hidden;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.dashboardPage .formContainer form button img {
+  width: 16px;
+  height: 16px;
+}
+
+.dashboardPage .formContainer form button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.6) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  transition: left 0.5s ease-in-out;
+}
+
+.dashboardPage .formContainer form button:hover::before {
+  left: 100%;
+}
+
+.dashboardPage .formContainer form button:hover {
+  background-color: #0b1119;
+}

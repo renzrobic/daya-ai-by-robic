@@ -1,0 +1,81 @@
+.homepage {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 100px;
+
+  .hero {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    justify-content: center;
+    margin-top: 170px;
+    text-align: center;
+    width: 100%;
+
+    h1 {
+      color: #fff;
+      font-size: 60px;
+      font-weight: 600;
+    }
+
+    p {
+      font-size: 25px;
+      width: 70%;
+    }
+
+    a {
+      align-items: center;
+      background-color: #080808;
+      border: 2px solid transparent;
+      border-radius: 50px;
+      color: #fff;
+      cursor: pointer;
+      display: flex;
+      font-size: 16px;
+      font-weight: 500;
+      justify-content: center;
+      margin-bottom: 100px;
+      margin-top: 20px;
+      overflow: hidden;
+      padding: 15px 25px;
+      position: relative;
+      text-decoration: none;
+      transition: background-color 0.3s ease-in-out, border 0.3s ease-in-out;
+
+      &::before {
+        background: linear-gradient(
+          90deg,
+          rgba(255, 255, 255, 0) 0%,
+          rgba(255, 255, 255, 0.6) 50%,
+          rgba(255, 255, 255, 0) 100%
+        );
+        content: "";
+        height: 100%;
+        left: -100%;
+        position: absolute;
+        top: 0;
+        transition: left 0.5s ease-in-out;
+        width: 100%;
+      }
+
+      &:hover {
+        background: linear-gradient(#080808, #080808) padding-box,
+          linear-gradient(45deg, #8b5cf6, #3b82f6) border-box;
+        border: 2px solid transparent;
+      }
+
+      &:hover::before {
+        left: 100%;
+      }
+
+      img {
+        height: 15px;
+        margin-left: 5px;
+        transform: rotate(40deg);
+      }
+    }
+  }
+}

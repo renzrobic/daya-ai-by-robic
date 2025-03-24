@@ -1,0 +1,112 @@
+.footer {
+  background-color: #080808;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  padding: 20px 70px 20px 70px;
+  width: 100%;
+
+  .footer-content {
+    display: flex;
+
+    .left {
+      align-items: flex-start;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      height: 100px;
+      justify-content: flex-start;
+      width: 100%;
+
+      span {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        img {
+          cursor: pointer;
+          height: 25px;
+        }
+        h1 {
+          font-size: 20px;
+        }
+      }
+
+      p {
+        font-size: 12px;
+        width: 450px;
+      }
+    }
+
+    .right {
+      align-items: end;
+      height: 100px;
+      width: 100%;
+
+      ul {
+        display: flex;
+        gap: 50px;
+        justify-content: center;
+
+        li {
+          cursor: pointer;
+          font-size: 13px;
+          font-weight: 500;
+          list-style: none;
+        }
+      }
+    }
+  }
+
+  .footer-end {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+
+    .left {
+      align-items: start;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      height: 100px;
+      justify-content: center;
+      width: 100%;
+
+      p {
+        cursor: pointer;
+        font-size: 12px;
+      }
+    }
+
+    .right {
+      align-items: center;
+      display: flex;
+      gap: 30px;
+      height: 100px;
+      justify-content: end;
+      width: 100%;
+
+      .logos {
+        align-items: center;
+        cursor: pointer;
+        display: flex;
+        flex-direction: row;
+        gap: 15px;
+
+        img {
+          border-radius: 50%;
+          position: relative;
+          transition: top 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+          width: 20px;
+
+          &:hover {
+            box-shadow: 0 0 2px #8b5cf6, 0 0 8px rgba(139, 92, 246, 0.6),
+              0 0 25px rgba(59, 130, 246, 0.3);
+            top: -5px;
+          }
+        }
+      }
+    }
+  }
+}
