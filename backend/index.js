@@ -25,7 +25,7 @@ app.use(clerkMiddleware());
 // Allowed Origins for CORS
 const allowedOrigins = [
   "http://localhost:5173",
-  "https://daya-ai-by-robic.vercel.app/api",
+  "https://daya-ai-by-robic.vercel.app",
 ];
 
 app.use(
@@ -53,10 +53,12 @@ app.use("/api", uploadRoutes);
 app.use(errorHandler);
 
 // Serve Frontend
-app.use(express.static(path.join(__dirname, "../client/dist")));
-app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "../client/dist", "index.html"));
-});
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static(path.join(__dirname, "../client/dist")));
+  app.get("*", (req, res) => {
+    res.sendFile(path.join(__dirname, "../client/dist", "index.html"));
+  });
+}
 
 // Start Server
 app.listen(port, () => {

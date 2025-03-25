@@ -5,7 +5,7 @@ import "./chatList.css";
 
 const ChatList = ({ userId }) => {
   const queryClient = useQueryClient();
-  const [openDropdown, setOpenDropdown] = useState(null); // Track which chat dropdown is open
+  const [openDropdown, setOpenDropdown] = useState(null);
   const [renameId, setRenameId] = useState(null);
   const [newTitle, setNewTitle] = useState("");
 
