@@ -16,13 +16,14 @@ dotenv.config();
 const app = express();
 const port = process.env.PORT || 3000;
 
+// __filename and __dirname are needed for serving static files in production
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 // Clerk middleware should be first
 app.use(clerkMiddleware());
 
-// Allowed Origins for CORS
+// Allowed origins for CORS
 const allowedOrigins = [
   "http://localhost:5173",
   "https://daya-ai-by-robic.vercel.app",
@@ -31,13 +32,14 @@ const allowedOrigins = [
 app.use(
   cors({
     origin: (origin, callback) => {
+      // Allow requests with no origin (like mobile apps or curl requests)
       if (!origin || allowedOrigins.includes(origin)) {
-        callback(null, true);
-      } else {
-        callback(new Error("Not allowed by CORS"));
+        return callback(null, true);
       }
+      // Otherwise, reject the request
+      return callback(new Error(`Not allowed by CORS: ${origin}`));
     },
-    credentials: true,
+    credentials: true, // Allows cookies and other credentials
   })
 );
 
@@ -52,15 +54,16 @@ app.use("/api", uploadRoutes);
 // Global error handler
 app.use(errorHandler);
 
-// Serve Frontend
+// Serve Frontend for production builds
 if (process.env.NODE_ENV === "production") {
+  // Serve static files from the frontend build folder
   app.use(express.static(path.join(__dirname, "../client/dist")));
   app.get("*", (req, res) => {
     res.sendFile(path.join(__dirname, "../client/dist", "index.html"));
   });
 }
 
-// Start Server
+// Start Server and connect to MongoDB
 app.listen(port, () => {
   connectDB();
   console.log(`Server running on port ${port}`);
